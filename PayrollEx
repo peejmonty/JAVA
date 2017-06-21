@@ -1,1 +1,32 @@
+import java.util.Scanner;
+
+public class Payroll
+{
+   public static void main(String[] args)
+   {
+      String name;        // worker bee
+      int hours;          // number of hours worked
+      double payRate;     // dollars per hour
+      double grossPay;    // pay check gross amount in dollars
+
+      Scanner keyboard = new Scanner(System.in);
+
+      System.out.print("What is your name?");
+      name = keyboard.nextLine();
+
+      System.out.print("How many hours? ");
+      hours = keyboard.nextInt();
+
+      System.out.print("What's your pay rate? ");
+      payRate = keyboard.nextDouble();
+
+
+      grossPay = hours * payRate;
+
+      System.out.println("Hello, " + name);
+      System.out.println("Your gross pay is $" + grossPay);
+   }
+}
+
+
 
