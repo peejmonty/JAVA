@@ -15,7 +15,7 @@ public class Decisions
       Scanner keyboard = new Scanner(System.in);
       
       System.out.println("Hello, Let's do some division!");
-      Systme.out.println();
+      System.out.println();
       
       // Has the user input the first integer
       System.out.println("Please enter integer1. ");
