@@ -45,15 +45,18 @@ public class Decisions
       
       //If there is no remainder it divides Int1 by Int2 to output 
       // the factor.
-      else if (Int1 % Int2 == 0)
+      else
       {
+         // initializes Int3 to be the result of Int1/Int2
          int Int3 = Int1 / Int2;
          
+         // Three lines which display the final outcome if there is infact a factor
          System.out.println("Given the first integer of " + Int1 + ",");
          System.out.println("and the second integer of " + Int2 + ".");
          System.out.println("You have a factor of " + Int3 + ".");
       }
       
+      // exit message which displays regaurdless of the outcome
       System.out.println("Thanks for playing, Goodbye!");
    }
 }
