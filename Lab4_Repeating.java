@@ -24,7 +24,7 @@ public class Repeating
          System.out.println();
          
          //Has the user input the first integer
-         System.out.print("Please enter integer 1: ');
+         System.out.print("Please enter integer 1: ");
          Int 1 = keyboard.nextInt();
          System.out.println();
          
