@@ -6,7 +6,7 @@ public class Lab10
 {
    public static void main(String[] args)
    {
-
+      //This is another practice commit
       //This is a new commit.
    }
 }
