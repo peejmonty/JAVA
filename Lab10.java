@@ -12,6 +12,7 @@ public class Lab10
       goodbye();
       Scanner inputFile = openFile();
       int[] Array = Array(inputFile);
+      int[] Asc = AscendingArray(Array);
 
    }
    public static void hello()
@@ -36,12 +37,13 @@ public class Lab10
       return inputFile; 
    }
 
-   public static int[] Array(Scanner inputFile)
+   public static int[] Array(Scanner inputFile) throws IOException
    {
       final int MAX = 30;
       int[] numbers = new int [MAX];
       int i = 0;
-      while (inputFile.hasNext())
+      
+      while (inputFile.hasNext() && i < numbers.length)
       {
          numbers[i] = inputFile.nextInt();
          System.out.println(numbers[i]);
@@ -57,5 +59,27 @@ public class Lab10
          newNums[l] = numbers[l];
       }
       return newNums;
+   }
+
+   public static int[] AscendingArray(int[] Array) throws IOException
+   {
+      int temp, min, i, j;
+      for (i = 0; i < Array.length - 1; i++)
+      {
+         min = i;
+         for (j = i + 1; j < Array.length; j++)
+         {
+            if(Array[j] < Array[min])
+            min = j;
+         }
+         if (min != i)
+         {
+            temp = Array[i];
+            Array[i] = Array[min];
+            Array[min] = temp;
+         }
+         System.out.println(Array[i]);
+      }
+      return Array;
    }
 }
