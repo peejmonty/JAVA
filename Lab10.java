@@ -12,9 +12,8 @@ public class Lab10
       goodbye();
       Scanner inputFile = openFile();
       int[] Array = Array(inputFile);
-      int[] Asc = AscendingArray(Array);
+      //int[] Asc = AscendingArray(Array);
       int Value = searchValue();
-
    }
    
    //hello message method
@@ -66,6 +65,7 @@ public class Lab10
       {
          newNums[l] = numbers[l];
       }
+      inputFile.close();
       return newNums;
    }
 
