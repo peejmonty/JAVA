@@ -38,8 +38,8 @@ public class Lab10
    public static Scanner openFile() throws IOException
    {
       String filename = "lab10input.txt";
-      Scanner inputFile = new Scanner(filename);
-      File file = new File(filename);
+      File file = new File (filename);
+      Scanner inputFile = new Scanner(file);
 
       return inputFile; 
    }
