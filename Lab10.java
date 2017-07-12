@@ -1,6 +1,8 @@
 //Phillip Viens
 //Lab10
-//Purpose: I don't know yet
+//Purpose: Take in a an Array. Print the Array. 
+//Sort the Array in Non Descending order, 
+//Search array for an int using binarySearch
 
 import java.util.Scanner;
 import java.io.*;
@@ -8,15 +10,31 @@ public class Lab10
 {
    public static void main(String[] args) throws IOException
    {
+      Scanner kbd = new Scanner(System.in);
+
+      //repeat variables to initialize do/while loop
+      char repeat;
+      String input;
+
       hello();
-      Scanner inputFile = openFile();
-      int[] Array = Array(inputFile);
-      printArray(Array);
-      int[] Asc = AscendingArray(Array);
-      printArray(Asc);
-      int Value = searchValue();
-      int results = binarySearch(Asc, Value);
-      printResults(Value, results);
+      Scanner inputFile = openFile();       //initializes File Varialbe
+      int[] Array = Array(inputFile);       //initial Array Variable
+      printArray(Array);                    //Print Array Function
+      int[] Asc = AscendingArray(Array);    //Sorted Array Varailbe
+      printArray(Asc);                      //Print Array Function
+
+      do
+      {
+         int Value = searchValue();
+         int results = binarySearch(Asc, Value);
+         printResults(Value, results);
+         System.out.println();
+         System.out.print("Would you like to look another int (y = yes: ");
+         input = kbd.nextLine();
+         repeat = input.charAt(0);
+      
+      }while (repeat == 'y' || repeat == 'Y');
+
       goodbye();
    }
    
@@ -60,6 +78,11 @@ public class Lab10
          System.out.println(numbers[i]);
          i++;
       }
+      inputFile.close();
+
+      //once Array has been taken in 
+      //A new perfect one is created with a MAX Value
+      // of the index count from the previous array
 
       final int NEWMAX = i;
       int[] newNums = new int [NEWMAX];
@@ -69,9 +92,7 @@ public class Lab10
       {
          newNums[l] = numbers[l];
          l++;
-      }
-      //inputFile.close();
-      //System.out.println("This function is finished now");
+      }   
       return newNums;
    }
 
@@ -93,6 +114,7 @@ public class Lab10
       return Array;
    }
 
+   //method to input a Search Value and returns it
    public static int searchValue()
    {
       Scanner kbd = new Scanner(System.in);
@@ -105,6 +127,7 @@ public class Lab10
       return searchValue;
    }
 
+   //method that searches for the give integer
    public static int binarySearch(int[] arr, int key) throws IOException
    {
 
@@ -128,6 +151,7 @@ public class Lab10
       return -1;
    }
 
+   //method that prints the results of the binary Search
    public static void printResults(int value, int results)
    {
       if (results == -1)
@@ -139,15 +163,19 @@ public class Lab10
          System.out.println(value + " was found at " + results);
       }
    }
+   
+   //print Array Function
    public static void printArray(int[] Array)
    {
       int i;
 
+      System.out.println();
+      
+      //for loop that prints Arrays
       for( i = 0; i < Array.length; i++)
-
       {
          System.out.println(i + ", " + Array[i]);
       }
+      System.out.println();
    }
-
 }
