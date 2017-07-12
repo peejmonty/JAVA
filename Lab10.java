@@ -15,7 +15,9 @@ public class Lab10
       hello();
       Scanner inputFile = openFile();
       int[] Array = Array(inputFile);
+      printArray(Array);
       int[] Asc = AscendingArray(Array);
+      printArray(Asc);
       int Value = searchValue();
       int results = binarySearch(Asc, Value);
       printResults(Value, results);
@@ -82,22 +84,17 @@ public class Lab10
    //method that sorts the Array in ascending order
    public static int[] AscendingArray(int[] Array) throws IOException
    {
-      int temp, min, i, j;
-      for (i = 0; i < Array.length - 1; i++)
+      for (int i = 0; i < Array.length; i++)
       {
-         min = i;
-         for (j = i + 1; j < Array.length; j++)
+         for(int j = i + 1; j < Array.length; j++)
          {
-            if(Array[j] < Array[min])
-            min = j;
+            if (Array[i] > Array[j])
+            {
+               int temp = Array[i];
+               Array[i] = Array[j];
+               Array[j] = temp;
+            }
          }
-         if (min != i)
-         {
-            temp = Array[i];
-            Array[i] = Array[min];
-            Array[min] = temp;
-         }
-         System.out.println(Array[i]);
       }
       return Array;
    }
@@ -146,6 +143,16 @@ public class Lab10
       else
       {
          System.out.println(value + " was found at " + results);
+      }
+   }
+   public static void printArray(int[] Array)
+   {
+      int i;
+
+      for( i = 0; i < Array.length; i++)
+
+      {
+         System.out.println(i + ", " + Array[i]);
       }
    }
 
