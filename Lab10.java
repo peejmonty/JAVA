@@ -3,10 +3,6 @@
 //Purpose: I don't know yet
 
 import java.util.Scanner;
-
-import javax.net.ssl.ExtendedSSLSession;
-import javax.sound.midi.MidiFileFormat;
-
 import java.io.*;
 public class Lab10
 {
@@ -21,8 +17,6 @@ public class Lab10
       int Value = searchValue();
       int results = binarySearch(Asc, Value);
       printResults(Value, results);
-      //System.out.println();
-      //System.out.print(results);
       goodbye();
    }
    
