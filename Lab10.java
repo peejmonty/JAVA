@@ -11,6 +11,8 @@ public class Lab10
       hello();
       goodbye();
       Scanner inputFile = openFile();
+      int[] Array = Array(inputFile);
+
    }
    public static void hello()
    {
@@ -32,5 +34,28 @@ public class Lab10
       File file = new File(filename);
 
       return inputFile; 
+   }
+
+   public static int[] Array(Scanner inputFile)
+   {
+      final int MAX = 30;
+      int[] numbers = new int [MAX];
+      int i = 0;
+      while (inputFile.hasNext())
+      {
+         numbers[i] = inputFile.nextInt();
+         System.out.println(numbers[i]);
+         i++;
+      }
+
+      final int NEWMAX = i;
+      int[] newNums = new int [NEWMAX];
+      int l = 0;
+
+      while (l < i)
+      {
+         newNums[l] = numbers[l];
+      }
+      return newNums;
    }
 }
