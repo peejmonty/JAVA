@@ -19,17 +19,14 @@ public class Lab10
       hello();
       Scanner inputFile = openFile();       //initializes File Varialbe
       int[] Array = Array(inputFile);       //initial Array Variable
-      printArray(Array);                    //Print Array Function
       int[] Asc = AscendingArray(Array);    //Sorted Array Varailbe
-      printArray(Asc);                      //Print Array Function
-
       do
       {
          int Value = searchValue();
          int results = binarySearch(Asc, Value);
          printResults(Value, results);
          System.out.println();
-         System.out.print("Would you like to look another int (y = yes: ");
+         System.out.print("Would you like to look another int (y = yes): ");
          input = kbd.nextLine();
          repeat = input.charAt(0);
       
@@ -52,6 +49,7 @@ public class Lab10
       System.out.println();
       System.out.println("Thanks for watching");
       System.out.println("Peace out cub scout");
+      System.out.println();
    }
 
    //method that opens the file
@@ -75,7 +73,6 @@ public class Lab10
       while (inputFile.hasNext() && i < numbers.length)
       {
          numbers[i] = inputFile.nextInt();
-         System.out.println(numbers[i]);
          i++;
       }
       inputFile.close();
@@ -160,7 +157,7 @@ public class Lab10
       }
       else
       {
-         System.out.println(value + " was found at " + results);
+         System.out.println(value + " was found at [index] " + results);
       }
    }
    
