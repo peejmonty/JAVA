@@ -13,6 +13,7 @@ public class Lab10
       Scanner inputFile = openFile();
       int[] Array = Array(inputFile);
       int[] Asc = AscendingArray(Array);
+      int Value = searchValue();
 
    }
    
@@ -90,4 +91,17 @@ public class Lab10
       }
       return Array;
    }
+
+   public static int searchValue();
+   {
+      Scanner kbd = new Scanner(System.in);
+      int searchValue;
+
+      System.out.print("Please give me a number you'd like to search for: ");
+      searchValue = kbd.nextInt();
+      kbd.nextLine();
+
+      return searchValue;
+   }
+   
 }
