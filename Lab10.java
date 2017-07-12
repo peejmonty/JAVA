@@ -64,8 +64,10 @@ public class Lab10
       while (l < i)
       {
          newNums[l] = numbers[l];
+         l++;
       }
-      inputFile.close();
+      //inputFile.close();
+      //System.out.println("This function is finished now");
       return newNums;
    }
 
