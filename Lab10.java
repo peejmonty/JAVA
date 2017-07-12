@@ -15,18 +15,24 @@ public class Lab10
       int[] Asc = AscendingArray(Array);
 
    }
+   
+   //hello message method
    public static void hello()
    {
       System.out.println("Hello!");
       System.out.println("Welcom to my last and final lab");
       System.out.println();
    }
+
+   //goodbye message method
    public static void goodbye()
    {
       System.out.println();
       System.out.println("Thanks for watching");
       System.out.println("Peace out cub scout");
    }
+
+   //method that opens the file
 
    public static Scanner openFile() throws IOException
    {
@@ -37,12 +43,13 @@ public class Lab10
       return inputFile; 
    }
 
+   //method that reads the file and takes in the array
    public static int[] Array(Scanner inputFile) throws IOException
    {
       final int MAX = 30;
       int[] numbers = new int [MAX];
       int i = 0;
-      
+
       while (inputFile.hasNext() && i < numbers.length)
       {
          numbers[i] = inputFile.nextInt();
@@ -61,6 +68,7 @@ public class Lab10
       return newNums;
    }
 
+   //method that sorts the Array in ascending order
    public static int[] AscendingArray(int[] Array) throws IOException
    {
       int temp, min, i, j;
