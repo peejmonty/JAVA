@@ -92,7 +92,7 @@ public class Lab10
       return Array;
    }
 
-   public static int searchValue();
+   public static int searchValue()
    {
       Scanner kbd = new Scanner(System.in);
       int searchValue;
@@ -103,5 +103,5 @@ public class Lab10
 
       return searchValue;
    }
-   
+
 }
