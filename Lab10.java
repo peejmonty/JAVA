@@ -3,6 +3,10 @@
 //Purpose: I don't know yet
 
 import java.util.Scanner;
+
+import javax.net.ssl.ExtendedSSLSession;
+import javax.sound.midi.MidiFileFormat;
+
 import java.io.*;
 public class Lab10
 {
@@ -12,8 +16,11 @@ public class Lab10
       goodbye();
       Scanner inputFile = openFile();
       int[] Array = Array(inputFile);
-      //int[] Asc = AscendingArray(Array);
+      int[] Asc = AscendingArray(Array);
       int Value = searchValue();
+      int results = binarySearch(Asc, Value);
+      System.out.println();
+      System.out.print(results);
    }
    
    //hello message method
@@ -104,6 +111,22 @@ public class Lab10
       kbd.nextLine();
 
       return searchValue;
+   }
+
+   public static int binarySearch(int[] arr, int key) throws IOException
+   {
+      int left = 0, right = arr.length - 1;
+      while (left <= right)
+      {
+         int mid = (left + right) / 2;
+         if (arr[mid]  == key)
+            return mid;
+         else if (arr[mid] < key)
+            left = mid + 1;
+         else
+            right = mid - 1;
+      }
+      return -1;
    }
 
 }
