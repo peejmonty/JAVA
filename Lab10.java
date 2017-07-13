@@ -22,12 +22,10 @@ public class Lab10
       int[] Asc = AscendingArray(Array);    //Sorted Array Varailbe
       do
       {
-         int Value = searchValue();                //Value that is being searched for
-         int results = binarySearch(Asc, Value);   //the binary search
+         int Value = searchValue();                
+         int results = binarySearch(Asc, Value);   
          printResults(Value, results);
          System.out.println();
-
-         // repeat input 
          System.out.print("Would you like to look another int (y = yes): ");
          input = kbd.nextLine();
          repeat = input.charAt(0);
@@ -136,7 +134,14 @@ public class Lab10
          int mid = (left + right) / 2;
          if (arr[mid]  == key)
          {
-            return mid;
+            //Checks to see if the value
+            // equals the key
+            //If it returns the mid before
+            while (arr[mid] == key && arr[mid] >= 0)
+            {
+               mid = mid -1;
+            }
+            return mid + 1;
          }
          else if (arr[mid] < key)
          {
@@ -161,20 +166,5 @@ public class Lab10
       {
          System.out.println(value + " was found at [index] " + results);
       }
-   }
-   
-   //print Array Function
-   public static void printArray(int[] Array)
-   {
-      int i;
-
-      System.out.println();
-      
-      //for loop that prints Arrays
-      for( i = 0; i < Array.length; i++)
-      {
-         System.out.println(i + ", " + Array[i]);
-      }
-      System.out.println();
    }
 }
