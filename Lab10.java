@@ -22,10 +22,12 @@ public class Lab10
       int[] Asc = AscendingArray(Array);    //Sorted Array Varailbe
       do
       {
-         int Value = searchValue();
-         int results = binarySearch(Asc, Value);
+         int Value = searchValue();                //Value that is being searched for
+         int results = binarySearch(Asc, Value);   //the binary search
          printResults(Value, results);
          System.out.println();
+
+         // repeat input 
          System.out.print("Would you like to look another int (y = yes): ");
          input = kbd.nextLine();
          repeat = input.charAt(0);
