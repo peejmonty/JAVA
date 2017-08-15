@@ -3,10 +3,10 @@ public class SearchSort
    public static void selectionSort(int[] arr)
    {
       int temp, min, i;
-      for (i = 0; i < arr.length; i++)
+      for (i = 0; i < arr.length - 1; i++)
       {
          min = i;
-         for (j = 1 + 1; j < arr.length; j++)
+         for (j = i + 1; j < arr.length; j++)
          {
             if (arr[j] < arr[min])
                min = j;
